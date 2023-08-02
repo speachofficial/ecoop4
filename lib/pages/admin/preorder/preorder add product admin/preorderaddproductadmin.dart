@@ -164,16 +164,16 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
       child: Form(
         key: addproductkey,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Stack(children: [
-            const MyBackButton(),
-            Align(
-                alignment: Alignment.center,
-                child: BigText(
-                  text: 'Add Product',
-                  size: 64.sp,
-                  color: AppColors.c333333_100,
-                ))
-          ]),
+          // Stack(children: [
+          //   const MyBackButton(),
+          //   Align(
+          //       alignment: Alignment.center,
+          //       child: BigText(
+          //         text: 'Add Product',
+          //         size: 64.sp,
+          //         color: AppColors.c333333_100,
+          //       ))
+          // ]),
           SizedBox(
             height: 96.h,
           ),
@@ -247,97 +247,124 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
                     ),
                   ),
                 ),
-          SizedBox(
-            height: 138.h,
-          ),
-          ListTile(
-            title: SmallText(
-              text: 'Product Name*',
-              size: 57.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors.c333333_100,
-            ),
-            subtitle: TextFormField(
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Required';
-                } else if (!RegExp(r'^[A-Za-z ]{1,20}$').hasMatch(value)) {
-                  return 'Product name cannot contain symbol or number';
-                } else {
-                  return null;
-                }
-              },
-              onChanged: (value) {
-                productName = value;
-              },
-              style: GoogleFonts.inter(
-                  fontSize: 57.sp,
-                  color: AppColors.cC8151D_100,
-                  fontWeight: FontWeight.w500),
-              decoration: InputDecoration(
-                  errorStyle: GoogleFonts.inter(fontSize: 36.sp),
-                  hintText: 'Product Name',
-                  hintStyle: GoogleFonts.inter(
-                      fontSize: 57.sp,
-                      color: AppColors.c333333_30,
-                      fontWeight: FontWeight.w500),
-                  border: InputBorder.none),
-            ),
-            // trailing: SmallText(
-            //   text: '0/100',
-            //   size: 57.sp,
-            //   color: AppColors.c333333_30,
-            //   fontWeight: FontWeight.w500,
-            // ),
-          ),
-          SizedBox(
-            height: 95.h,
-          ),
-          ListTile(
-            title: SmallText(
-              text: 'Product Description*',
-              size: 57.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors.c333333_100,
-            ),
-            subtitle: TextFormField(
-              maxLines: 5,
-              textInputAction: TextInputAction.next,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Required';
-                } else if (!RegExp(
-                        r'^([\w\s.,!?~!@#$%^&<>*()_+{}[\]:;"\/?-]+ ){0,99}[\w\s.,!?~!@#$%^&*()_+{}[\]:;"\/?-]+$')
-                    .hasMatch(value)) {
-                  return 'Product description does not exceed 100 words';
-                } else {
-                  return null;
-                }
-              },
-              onChanged: (value) {
-                productDescription = value;
-              },
-              style: GoogleFonts.inter(
-                  fontSize: 57.sp,
-                  color: AppColors.cC8151D_100,
-                  fontWeight: FontWeight.w500),
-              decoration: InputDecoration(
-                errorStyle: GoogleFonts.inter(fontSize: 36.sp),
-                hintText: 'Product Description',
-                hintStyle: GoogleFonts.inter(
-                    fontSize: 57.sp,
-                    color: AppColors.c333333_30,
-                    fontWeight: FontWeight.w500),
-                border: InputBorder.none,
-              ),
-            ),
-            // trailing: SmallText(
-            //   text: '0/100',
-            //   size: 57.sp,
-            //   color: AppColors.c333333_30,
-            //   fontWeight: FontWeight.w500,
-            // ),
-          ),
+          // SizedBox(
+          //   height: 138.h,
+          // ),
+          // ListTile(
+          //   title: SmallText(
+          //     text: 'Product Name*',
+          //     size: 57.sp,
+          //     fontWeight: FontWeight.w500,
+          //     color: AppColors.c333333_100,
+          //   ),
+          //   subtitle: TextFormField(
+          //     validator: (value) {
+          //       if (value!.isEmpty) {
+          //         return 'Required';
+          //       } else if (!RegExp(r'^[A-Za-z ]{1,20}$').hasMatch(value)) {
+          //         return 'Product name cannot contain symbol or number';
+          //       } else {
+          //         return null;
+          //       }
+          //     },
+          //     onChanged: (value) {
+          //       productName = value;
+          //     },
+          //     style: GoogleFonts.inter(
+          //         fontSize: 57.sp,
+          //         color: AppColors.cC8151D_100,
+          //         fontWeight: FontWeight.w500),
+          //     decoration: InputDecoration(
+          //         errorStyle: GoogleFonts.inter(fontSize: 36.sp),
+          //         hintText: 'Product Name',
+          //         hintStyle: GoogleFonts.inter(
+          //             fontSize: 57.sp,
+          //             color: AppColors.c333333_30,
+          //             fontWeight: FontWeight.w500),
+          //         border: InputBorder.none),
+          //   ),
+          //   // trailing: SmallText(
+          //   //   text: '0/100',
+          //   //   size: 57.sp,
+          //   //   color: AppColors.c333333_30,
+          //   //   fontWeight: FontWeight.w500,
+          //   // ),
+          // ),
+          // SizedBox(
+          //   height: 95.h,
+          // ),
+          // ListTile(
+          //   title: SmallText(
+          //     text: 'Product Description*',
+          //     size: 57.sp,
+          //     fontWeight: FontWeight.w500,
+          //     color: AppColors.c333333_100,
+          //   ),
+          //   subtitle: TextFormField(
+          //     maxLines: 5,
+          //     textInputAction: TextInputAction.next,
+          //     validator: (value) {
+          //       if (value!.isEmpty) {
+          //         return 'Required';
+          //       } else if (!RegExp(
+          //               r'^([\w\s.,!?~!@#$%^&<>*()_+{}[\]:;"\/?-]+ ){0,99}[\w\s.,!?~!@#$%^&*()_+{}[\]:;"\/?-]+$')
+          //           .hasMatch(value)) {
+          //         return 'Product description does not exceed 100 words';
+          //       } else {
+          //         return null;
+          //       }
+          //     },
+          //     onChanged: (value) {
+          //       productDescription = value;
+          //     },
+          //     style: GoogleFonts.inter(
+          //         fontSize: 57.sp,
+          //         color: AppColors.cC8151D_100,
+          //         fontWeight: FontWeight.w500),
+          //     decoration: InputDecoration(
+          //       errorStyle: GoogleFonts.inter(fontSize: 36.sp),
+          //       hintText: 'Product Description',
+          //       hintStyle: GoogleFonts.inter(
+          //           fontSize: 57.sp,
+          //           color: AppColors.c333333_30,
+          //           fontWeight: FontWeight.w500),
+          //       border: InputBorder.none,
+          //     ),
+          //   ),
+          //   // trailing: SmallText(
+          //   //   text: '0/100',
+          //   //   size: 57.sp,
+          //   //   color: AppColors.c333333_30,
+          //   //   fontWeight: FontWeight.w500,
+          //   // ),
+          // ),
+          // // Divider(
+          // //   height: 2.h,
+          // //   color: AppColors.c333333_30,
+          // // ),
+          // // Container(
+          // //   alignment: Alignment.center,
+          // //   height: 200.h,
+          // //   width: double.maxFinite,
+          // //   child: ListTile(
+          // //     leading: Icon(
+          // //       Icons.list_rounded,
+          // //       size: 100.sp,
+          // //       color: AppColors.c000000_100,
+          // //     ),
+          // //     title: SmallText(
+          // //       text: 'Category',
+          // //       size: 57.sp,
+          // //       fontWeight: FontWeight.w500,
+          // //       color: AppColors.c333333_100,
+          // //     ),
+          // //     trailing: Icon(
+          // //       Icons.arrow_forward_ios,
+          // //       size: 63.sp,
+          // //       color: AppColors.c000000_45,
+          // //     ),
+          // //   ),
+          // // ),
           // Divider(
           //   height: 2.h,
           //   color: AppColors.c333333_30,
@@ -347,83 +374,56 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
           //   height: 200.h,
           //   width: double.maxFinite,
           //   child: ListTile(
-          //     leading: Icon(
-          //       Icons.list_rounded,
-          //       size: 100.sp,
-          //       color: AppColors.c000000_100,
-          //     ),
-          //     title: SmallText(
-          //       text: 'Category',
-          //       size: 57.sp,
-          //       fontWeight: FontWeight.w500,
-          //       color: AppColors.c333333_100,
-          //     ),
-          //     trailing: Icon(
-          //       Icons.arrow_forward_ios,
-          //       size: 63.sp,
-          //       color: AppColors.c000000_45,
-          //     ),
-          //   ),
+          //       leading: Icon(
+          //         Icons.price_change,
+          //         size: 100.sp,
+          //         color: AppColors.c333333_100,
+          //       ),
+          //       title: SmallText(
+          //         text: role == 'admin' ? 'Price' : 'Starting price',
+          //         size: 57.sp,
+          //         fontWeight: FontWeight.w500,
+          //         color: AppColors.c333333_100,
+          //       ),
+          //       trailing: SizedBox(
+          //         width: 245.w,
+          //         child: TextFormField(
+          //           validator: (value) {
+          //             if (value!.isEmpty) {
+          //               return 'Required';
+          //             } else if (!RegExp(r'^\d+(\.\d{1,2})?$')
+          //                 .hasMatch(value)) {
+          //               return 'Number only';
+          //             } else {
+          //               return null;
+          //             }
+          //           },
+          //           onChanged: (value) {
+          //             setPrice = double.parse(value);
+          //           },
+          //           style: GoogleFonts.inter(
+          //               fontSize: 57.sp,
+          //               color: AppColors.c333333_100,
+          //               fontWeight: FontWeight.w500),
+          //           decoration: InputDecoration(
+          //             errorStyle: GoogleFonts.inter(fontSize: 36.sp),
+          //             hintText: 'Set price',
+          //             hintStyle: GoogleFonts.inter(
+          //                 fontSize: 57.sp,
+          //                 color: AppColors.c333333_30,
+          //                 fontWeight: FontWeight.w500),
+          //             border: InputBorder.none,
+          //           ),
+          //         ),
+          //       )),
           // ),
-          Divider(
-            height: 2.h,
-            color: AppColors.c333333_30,
-          ),
-          Container(
-            alignment: Alignment.center,
-            height: 200.h,
-            width: double.maxFinite,
-            child: ListTile(
-                leading: Icon(
-                  Icons.price_change,
-                  size: 100.sp,
-                  color: AppColors.c333333_100,
-                ),
-                title: SmallText(
-                  text: role == 'admin' ? 'Price' : 'Starting price',
-                  size: 57.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.c333333_100,
-                ),
-                trailing: SizedBox(
-                  width: 245.w,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Required';
-                      } else if (!RegExp(r'^\d+(\.\d{1,2})?$')
-                          .hasMatch(value)) {
-                        return 'Number only';
-                      } else {
-                        return null;
-                      }
-                    },
-                    onChanged: (value) {
-                      setPrice = double.parse(value);
-                    },
-                    style: GoogleFonts.inter(
-                        fontSize: 57.sp,
-                        color: AppColors.c333333_100,
-                        fontWeight: FontWeight.w500),
-                    decoration: InputDecoration(
-                      errorStyle: GoogleFonts.inter(fontSize: 36.sp),
-                      hintText: 'Set price',
-                      hintStyle: GoogleFonts.inter(
-                          fontSize: 57.sp,
-                          color: AppColors.c333333_30,
-                          fontWeight: FontWeight.w500),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                )),
-          ),
-          Divider(
-            height: 2.h,
-            color: AppColors.c333333_30,
-          ),
-          SizedBox(
-            height: 86.h,
-          ),
+          // Divider(
+          //   height: 2.h,
+          //   color: AppColors.c333333_30,
+          // ),
+          // SizedBox(
+          //   height: 86.h,
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
