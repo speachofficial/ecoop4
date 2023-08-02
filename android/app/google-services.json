@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "698333827358",
+    "project_id": "ecoop4-df108",
+    "storage_bucket": "ecoop4-df108.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698333827358:android:0e41463db8013597f5390f",
+        "android_client_info": {
+          "package_name": "com.example.ecoop4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698333827358-sq974kekt1kveqms113oq1e78egm2750.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGVZlDiJrPUGT4GtEHLgUAV0F54YjHCUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698333827358-sq974kekt1kveqms113oq1e78egm2750.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "698333827358-3pg3j0qnh3enm6pu0lq77srdt7uoka5k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecoop4"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
